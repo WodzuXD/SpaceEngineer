@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class Powrotny : MonoBehaviour {
 
     public GameObject panel;
-    bool pauza = false;
+    public bool pauza = false;
+    bool pauza1 = false;
     public Image im;
 
     public RigidbodyFirstPersonController rfpc;
@@ -19,11 +20,14 @@ public class Powrotny : MonoBehaviour {
 	
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
             pauza = !pauza;
+            pauza1 = !pauza1;
+        }
 
-        panel.active = pauza;
-        rfpc.enabled = !pauza;
-        im.enabled = !pauza;
+        panel.active = pauza1;
+        rfpc.enabled = !pauza1;
+        im.enabled = !pauza1;
 
         if (pauza)
         {
@@ -39,7 +43,7 @@ public class Powrotny : MonoBehaviour {
 
     public void Wroc()
     {
-        pauza = false;
+        pauza1 = false;
     }
 
     public void MenuWroc()
@@ -49,7 +53,7 @@ public class Powrotny : MonoBehaviour {
 
     private void OnGUI()
     {
-        if (pauza)
+        if (pauza1)
         {
             if (GUI.Button(new Rect(Screen.width * 0.2f, Screen.height / 2, 200f, 40f), "WRÓĆ"))
             {

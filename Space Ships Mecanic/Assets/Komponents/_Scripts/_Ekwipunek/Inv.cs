@@ -11,12 +11,15 @@ public class Inv : MonoBehaviour {
     public GameObject wyrzucanie;
     public GameObject[] obiekty;
     public GameObject[] obiektyPrzyKamerze;
+    Zlecenia zlecenie;
 
 	void Start () {
 		
 	}
 	
 	void Update () {
+
+        zlecenie = FindObjectOfType<Zlecenia>();
 
         for (int i = 0; i < obiektyPrzyKamerze.Length; i++)
         {
@@ -61,6 +64,17 @@ public class Inv : MonoBehaviour {
                         GameObject obiekt = Instantiate(obiekty[obiektWRence], wyrzucanie.transform.position, new Quaternion(0, 0, 0, 0)) as GameObject;
                         obiektWRence = hit.transform.gameObject.GetComponent<Przedmiot>().przedmiotId;
                         Destroy(hit.transform.gameObject);
+                    }
+                }
+                else if (hit.transform.root.tag == "klient")
+                {
+                    if(zlecenie.zlecenia == 1)
+                    {
+                        hit.transform.GetComponent<Klient>().Klient1();
+                    }
+                    if (zlecenie.zlecenia == 2)
+                    {
+                        hit.transform.GetComponent<Klient>().Klient2();
                     }
                 }
             }
