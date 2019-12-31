@@ -9,7 +9,15 @@ public class ShipPod : MonoBehaviour
     public GameObject drzwiczkiPrzedmiot;
     public GameObject zbiornik;
 
+    public GameObject mSzyba;
+    public GameObject rSzybaGo;
+    public GameObject rSzybaPrzedmiot;
+    public GameObject nSzyba;
+
+    public bool rSzyba = true;
     public bool zamkniete = true;
+
+    public Statek st;
 
     void Start()
     {
@@ -36,6 +44,19 @@ public class ShipPod : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if (!rSzyba)
+        {
+            rSzybaGo.active = false;
+            mSzyba.active = true;
+            GameObject rSzybaa = Instantiate(rSzybaPrzedmiot, rSzybaGo.transform.position, new Quaternion(0f, 0f, 0f, 0f)) as GameObject;
+            rSzyba = true;
+        }
+
+        if (st.szyba == 1)
+        {
+            nSzyba.active = true;
         }
     }
 }

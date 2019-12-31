@@ -3126,7 +3126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb68bb6ef0afb3b478a25971426b3875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zlecenia: 1
+  zlecenia: 0
 --- !u!4 &1876743143
 Transform:
   m_ObjectHideFlags: 0
@@ -3579,6 +3579,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Klient
       objectReference: {fileID: 0}
+    - target: {fileID: 7449048963179837370, guid: 05beddd21edf0fe43b806b1e3e3eb8c8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7449048963179837318, guid: 05beddd21edf0fe43b806b1e3e3eb8c8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3638,7 +3643,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gracz
       value: 
-      objectReference: {fileID: 1661739875}
+      objectReference: {fileID: 914223967}
     - target: {fileID: 5929189654822728616, guid: 05beddd21edf0fe43b806b1e3e3eb8c8,
         type: 3}
       propertyPath: Teksty.Array.data[0]
@@ -3661,6 +3666,21 @@ PrefabInstance:
     - target: {fileID: 1541769796, guid: 05beddd21edf0fe43b806b1e3e3eb8c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449048963179837369, guid: 05beddd21edf0fe43b806b1e3e3eb8c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929189654811157435, guid: 05beddd21edf0fe43b806b1e3e3eb8c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929189656197767662, guid: 05beddd21edf0fe43b806b1e3e3eb8c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05beddd21edf0fe43b806b1e3e3eb8c8, type: 3}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Klient : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Klient : MonoBehaviour
     Powrotny pow;
 
     public GameObject[] klienci;
-    public GameObject gracz;
+    public RigidbodyFirstPersonController gracz;
     public GameObject kamera;
     public GameObject[] Teksty;
 
@@ -50,16 +51,16 @@ public class Klient : MonoBehaviour
 
     public void Klient1()
     {
-        gracz.active = false;
-        kamera.active = true;
+        gracz.enabled = false;
+        //kamera.active = true;
         Teksty[1].active = true;
         pow.pauza = true;
     }
 
     public void Klient2()
     {
-        gracz.active = false;
-        kamera.active = true;
+        gracz.enabled = false;
+        //kamera.active = true;
         Teksty[2].active = true;
         pow.pauza = true;
     }

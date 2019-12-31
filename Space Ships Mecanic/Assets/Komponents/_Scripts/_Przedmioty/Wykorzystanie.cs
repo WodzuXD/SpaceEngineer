@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wykorzystanie : MonoBehaviour {
 
-    public enum PrzedmiotEnum { wkrentarka,spawarka,gasnica,zbiornik,szyba,plaski}
+    public enum PrzedmiotEnum { wkrentarka,spawarka,gasnica,zbiornik,szyba,plaski,grinder}
     public PrzedmiotEnum rodzajPrzedmiotu;
 
     
@@ -15,11 +15,14 @@ public class Wykorzystanie : MonoBehaviour {
     public AudioSource zbiornik;
     public AudioSource szyba;
     public AudioSource plaski;
+    public AudioSource grinder;
 
     public Animator animWkrent;
     public Animator animPlaski;
+    public Animator animGrinder;
     public GameObject spawarkaPartic;
     public GameObject gasnicaPartic;
+    public GameObject grinderPartic;
 
     float Timer = 0f;
 
@@ -107,6 +110,19 @@ public class Wykorzystanie : MonoBehaviour {
                     szyba.mute = true;
                 }
                 break;
+            case PrzedmiotEnum.grinder:
+                if (Input.GetMouseButton(1))
+                {
+                    animGrinder.SetBool("Dziala", true);
+                    grinder.mute = false;
+                }
+                else
+                {
+                    grinderPartic.active = false;
+                    animGrinder.SetBool("Dziala", false);
+                    grinder.mute = true;
+                }
+                break;
         }
 	}
 
@@ -155,7 +171,11 @@ public class Wykorzystanie : MonoBehaviour {
                     statek.zbiornik = 1;
                     Inv inwentory = FindObjectOfType<Inv>();
                     inwentory.obiektWRence = 0;
-
+                }
+                if (hit.transform.root.tag == "rSzyba" && rodzajPrzedmiotu == PrzedmiotEnum.grinder)
+                {
+                    hit.transform.GetComponent<rGlass>().hp -= 10;
+                    grinderPartic.active = true;
                 }
             }
         }

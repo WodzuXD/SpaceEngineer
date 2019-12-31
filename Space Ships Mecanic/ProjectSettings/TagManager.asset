@@ -11,6 +11,8 @@ TagManager:
   - ogien
   - mZbiornik
   - klient
+  - mSzyba
+  - rSzyba
   layers:
   - Default
   - TransparentFX
