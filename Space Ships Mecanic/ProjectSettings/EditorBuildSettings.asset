@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/Biuro.unity
     guid: 38c8aa88c82324145b51fc82fe3ac81a
   - enabled: 1
+    path: Assets/_Scenes/PustyWarsztat.unity
+    guid: 97c0febdc46ee1f4087b075c6ac7d874
+  - enabled: 1
     path: Assets/_Scenes/Warsztat.unity
     guid: 3a9767d8774ac5e48a08f7dc2dc5fdc0
   m_configObjects: {}

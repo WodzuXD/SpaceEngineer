@@ -70,11 +70,11 @@ public class Inv : MonoBehaviour {
                 {
                     if(zlecenie.zlecenia == 1)
                     {
-                        hit.transform.gameObject.GetComponent<Klient>().Klient1();
+                        hit.transform.gameObject.transform.GetComponent<Klient>().klient = true;
                     }
                     if (zlecenie.zlecenia == 2)
                     {
-                        hit.transform.GetComponent<Klient>().Klient2();
+                        hit.transform.gameObject.transform.GetComponent<Klient>().klient = true;
                     }
                 }
             }

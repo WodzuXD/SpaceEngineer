@@ -5,8 +5,11 @@ using UnityEngine;
 public class Wkrenty : MonoBehaviour {
 
     public float progress = 0f;
-
     public float endDrill = 1f;
+
+    float last;
+
+
 
     public GameObject srobaGO;
     public PudeleczkoSkrzyneczka pS;
@@ -16,6 +19,13 @@ public class Wkrenty : MonoBehaviour {
 	}
 	
 	void Update () {
+
+        if (progress != last)
+        {
+            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, gameObject.transform.position -= new Vector3(0.001f * progress, 0f, 0f), Time.deltaTime * 10f);
+            last = progress;
+        }
+
         if (progress >= endDrill)
         {
             if (pS.sroby[0] == 0)
@@ -32,7 +42,7 @@ public class Wkrenty : MonoBehaviour {
             }
             else pS.sroby[0] = 0;
 
-            GameObject obiekt = Instantiate(srobaGO, gameObject.transform.position, new Quaternion(0, 0, 0, 0)) as GameObject;
+            GameObject obiekt = Instantiate(srobaGO, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
 
             Destroy(gameObject);
         }

@@ -25,7 +25,7 @@ public class PudeleczkoSkrzyneczka : MonoBehaviour {
                     {
                         if (sroby[3] == 0)
                         {
-                           GameObject obiekt = Instantiate(drzwiczkiPrzedmiot, drzwiczki.transform.position, new Quaternion(90f, 0, 90f, 0)) as GameObject;
+                           GameObject obiekt = Instantiate(drzwiczkiPrzedmiot, drzwiczki.transform.position, drzwiczki.transform.rotation) as GameObject;
                            Destroy(drzwiczki);
                             zamkniete = false;
                        }

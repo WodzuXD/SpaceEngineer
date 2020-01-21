@@ -165,7 +165,6 @@ public class Wykorzystanie : MonoBehaviour {
                 }
                 if (hit.transform.root.tag == "mZbiornik" && rodzajPrzedmiotu == PrzedmiotEnum.zbiornik)
                 {
-                    Debug.Log("zbiornik");
                     hit.transform.GetComponent<Mzbiornik>().Zbiornik();
                     Statek statek = FindObjectOfType<Statek>();
                     statek.zbiornik = 1;

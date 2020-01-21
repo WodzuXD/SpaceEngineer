@@ -8,11 +8,13 @@ public class Klient : MonoBehaviour
     Zlecenia zlecemia;
     Powrotny pow;
 
+    public Biuro biu;
+
     public GameObject[] klienci;
-    public RigidbodyFirstPersonController gracz;
+    public GameObject gracz;
     public GameObject kamera;
     public GameObject[] Teksty;
-
+    public bool klient = false;
 
     void Start()
     {
@@ -35,6 +37,11 @@ public class Klient : MonoBehaviour
                         klienci[i].active = false;
                     }
                 }
+                if (klient)
+                {
+                    Klient1();
+                    klient = false;
+                }
                 break;
             case 2:
                 for (int i = 0; i < klienci.Length; i++)
@@ -45,26 +52,28 @@ public class Klient : MonoBehaviour
                         klienci[i].active = false;
                     }
                 }
+                if (klient)
+                {
+                    Klient2();
+                    klient = false;
+                }
                 break;
         }
     }
 
     public void Klient1()
     {
-        gracz.enabled = false;
-        //kamera.active = true;
+        gracz.active = false;
+        kamera.active = true;
         Teksty[1].active = true;
         pow.pauza = true;
     }
 
     public void Klient2()
     {
-        gracz.enabled = false;
-        //kamera.active = true;
+        gracz.active = false;
+        kamera.active = true;
         Teksty[2].active = true;
         pow.pauza = true;
     }
-
-
-
 }

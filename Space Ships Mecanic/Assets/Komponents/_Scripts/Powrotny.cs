@@ -9,7 +9,7 @@ public class Powrotny : MonoBehaviour {
 
     public GameObject panel;
     public bool pauza = false;
-    bool pauza1 = false;
+    public bool pauza1 = false;
     public Image im;
 
     public RigidbodyFirstPersonController rfpc;
@@ -21,7 +21,14 @@ public class Powrotny : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauza = !pauza;
+            if (pauza)
+            {
+                pauza = true;
+            }
+            else
+            {
+                pauza = !pauza;
+            }
             pauza1 = !pauza1;
         }
 

@@ -11,6 +11,7 @@ public class Biuro : MonoBehaviour
     Powrotny pow;
     bool klient = false;
     public GameObject kamera;
+    public Klient kl;
 
 
     public GameObject KlientGO;
@@ -26,12 +27,12 @@ public class Biuro : MonoBehaviour
         zlecenia = FindObjectOfType<Zlecenia>();
         pow = FindObjectOfType<Powrotny>();
 
-        if (zlecenia.zlecenia == 0 && klient == true)
+        if (zlecenia.zlecenia == 0 && klient == false)
         {
             KlientGO.active = false;
             klient = false;
         }
-        else if (zlecenia.zlecenia > 0 && klient == false)
+        else if (zlecenia.zlecenia > 0 && klient == true)
         {
             KlientGO.active = true;
             klient = true;
@@ -40,20 +41,14 @@ public class Biuro : MonoBehaviour
 
     public void GraczActive()
     {
+        zlecenia.przyjete = true;
         for (int i = 0; i < Teksty.Length; i++)
         {
-            if (i == 0)
-            {
-                Teksty[i].active = true;
-            }
-            else if (i != 0)
-            {
-                Teksty[i].active = false;
-            }
+            Teksty[i].active = false;
         }
         kamera.active = false;
-        pow.pauza = false;
         gracz.active = true;
+        pow.pauza = false;
     }
 
 }

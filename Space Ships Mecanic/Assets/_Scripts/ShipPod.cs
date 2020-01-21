@@ -8,6 +8,7 @@ public class ShipPod : MonoBehaviour
     public GameObject drzwiczki;
     public GameObject drzwiczkiPrzedmiot;
     public GameObject zbiornik;
+    public GameObject zbiornikPrzedmiot;
 
     public GameObject mSzyba;
     public GameObject rSzybaGo;
@@ -36,9 +37,9 @@ public class ShipPod : MonoBehaviour
                     {
                         if (srobypod[3] == 0)
                         {
-                            GameObject obiekt = Instantiate(drzwiczkiPrzedmiot, drzwiczki.transform.position, new Quaternion(90f, 0, 90f, 0)) as GameObject;
+                            GameObject drzwiczkiii = Instantiate(drzwiczkiPrzedmiot, drzwiczki.transform.position, drzwiczki.transform.rotation) as GameObject;
+                            GameObject zbiornikkk = Instantiate(zbiornikPrzedmiot, zbiornik.transform.position, zbiornik.transform.rotation) as GameObject;
                             drzwiczki.active = false;
-                            zbiornik.active = true;
                             zamkniete = false;
                         }
                     }
@@ -50,7 +51,7 @@ public class ShipPod : MonoBehaviour
         {
             rSzybaGo.active = false;
             mSzyba.active = true;
-            GameObject rSzybaa = Instantiate(rSzybaPrzedmiot, rSzybaGo.transform.position, new Quaternion(0f, 0f, 0f, 0f)) as GameObject;
+            GameObject rSzybaa = Instantiate(rSzybaPrzedmiot, rSzybaGo.transform.position, rSzybaGo.transform.rotation) as GameObject;
             rSzyba = true;
         }
 

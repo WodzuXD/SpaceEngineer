@@ -418,7 +418,7 @@ MonoBehaviour:
 
     Remove item                                                                                 G
 
-    Use Item                                                                                       LPM'
+    Use Item                                                                                       RPM'
 --- !u!222 &48765690
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -807,7 +807,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press LMB on the screw to remove it
+  m_Text: Press RMB on the screw to remove it
 --- !u!222 &175884121
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2761,7 +2761,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Press LMB to cut the item
+  m_Text: 'Press RMB to cut the item
 
     {GLASS/...}'
 --- !u!222 &832699054
@@ -5916,7 +5916,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press LMB on hole to repair that
+  m_Text: Press RMB on hole to repair that
 --- !u!222 &1933863735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5995,7 +5995,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press RMB
+  m_Text: Press LMB
 --- !u!222 &2002854737
 CanvasRenderer:
   m_ObjectHideFlags: 0
